@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: example-app
+Version: 0.1.0
+Summary: Example application demonstrating a use-case of the base-service package
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
