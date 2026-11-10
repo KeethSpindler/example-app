@@ -25,6 +25,12 @@ Use this template for each new release:
 
 ## Entries
 
+### [0.2.0] - 2026-11-09 (Keeth Spindler)
+
+#### Features
+
+- Added Basic FastAPI capabilities
+
 ### [0.1.0] - 2026-09-25 (Keeth Spindler)
 
 #### Additions

@@ -11,8 +11,9 @@ packaging the result into a container.
 
 ## What this project demonstrates
 
-- **Installing `base_service` from Git** — it isn't published to PyPI, so it's
-  pulled from the GitHub URL (see [Dockerfile](Dockerfile)).
+- **Inheriting `base_service` from its container image** — the
+  [Dockerfile](Dockerfile) uses `ghcr.io/keethspindler/base-service:v0.1.0`,
+  which already includes the package.
 - **Bootstrapping shared utilities on import** — [src/example_app/\_\_init\_\_.py](src/example_app/__init__.py)
   calls `base_service.core.util.logging.instantiate_logger` with the service
   name and a `LOGGING_LEVEL` environment variable, so any module can call
@@ -53,6 +54,10 @@ pytest
 ```
 
 ## Container
+
+The build temporarily switches to root to install the application and set file
+permissions, then returns to the base image's existing non-root `app` user for
+runtime. It does not reinstall `base_service` from Git.
 
 ```bash
 docker build . -t example-app:v0.1.0
